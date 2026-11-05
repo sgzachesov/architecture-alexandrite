@@ -1,0 +1,265 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0" version="24.9.1">
+  <diagram name="C4 — трейсинг и алертинг" id="c4-tracing-alerting">
+    <mxGraphModel dx="2020" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2020" pageHeight="1050" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="p1" value="&lt;b&gt;Клиент B2C&lt;/b&gt;&lt;br&gt;[Пользователь]" style="shape=mxgraph.c4.person2;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;size=80;fillColor=#6C6477;strokeColor=#4D4D4D;fontColor=#ffffff;fontSize=11;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="&lt;b&gt;Продавец&lt;/b&gt;&lt;br&gt;[Пользователь CRM]" style="shape=mxgraph.c4.person2;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;size=80;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;fontSize=11;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="&lt;b&gt;API-партнёр&lt;/b&gt;&lt;br&gt;[Внешний продавец]" style="shape=mxgraph.c4.person2;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;size=80;fillColor=#6C6477;strokeColor=#4D4D4D;fontColor=#ffffff;fontSize=11;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="520" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p4" value="&lt;b&gt;Оператор&lt;/b&gt;&lt;br&gt;[Пользователь MES]" style="shape=mxgraph.c4.person2;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;size=80;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;fontSize=11;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="745" width="200" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="w1" value="&lt;b&gt;Онлайн-магазин&lt;/b&gt;&lt;br&gt;[Vue, TypeScript, Three.js]&lt;br&gt;OTel JS" style="shape=mxgraph.c4.webBrowserContainer2;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;strokeColor=#B85450;strokeWidth=2;dashPattern=6 4;fillColor=#23A2D9;fontSize=11;fontColor=#ffffff;align=center;" vertex="1" parent="1">
+          <mxGeometry x="300" y="80" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="w2" value="&lt;b&gt;CRM&lt;/b&gt;&lt;br&gt;[Vue, TypeScript]&lt;br&gt;OTel JS" style="shape=mxgraph.c4.webBrowserContainer2;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;strokeColor=#B85450;strokeWidth=2;dashPattern=6 4;fillColor=#23A2D9;fontSize=11;fontColor=#ffffff;align=center;" vertex="1" parent="1">
+          <mxGeometry x="300" y="300" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="w3" value="&lt;b&gt;MES&lt;/b&gt;&lt;br&gt;[React, TypeScript]&lt;br&gt;OTel JS" style="shape=mxgraph.c4.webBrowserContainer2;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;strokeColor=#B85450;strokeWidth=2;dashPattern=6 4;fillColor=#23A2D9;fontSize=11;fontColor=#ffffff;align=center;" vertex="1" parent="1">
+          <mxGeometry x="300" y="745" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a1" value="&lt;b&gt;Shop API&lt;/b&gt;&lt;br&gt;[Spring Boot]&lt;br&gt;OTel SDK" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#B85450;strokeWidth=2;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="600" y="80" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="&lt;b&gt;CRM API&lt;/b&gt;&lt;br&gt;[Spring Boot]&lt;br&gt;OTel SDK" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#B85450;strokeWidth=2;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="600" y="300" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="&lt;b&gt;MES API&lt;/b&gt;&lt;br&gt;[C#]&lt;br&gt;OTel SDK · расчёт цены" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#B85450;strokeWidth=2;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="600" y="745" width="280" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d1" value="&lt;b&gt;Shop DB&lt;/b&gt;&lt;br&gt;[PostgreSQL]&lt;br&gt;общая для магазина и CRM" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=11;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="90" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="&lt;b&gt;3D files storage&lt;/b&gt;&lt;br&gt;[S3]" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=11;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="360" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mq" value="&lt;b&gt;RabbitMQ&lt;/b&gt;&lt;br&gt;[Очередь сообщений]&lt;br&gt;traceparent в headers" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=11;fontColor=#ffffff;align=center;strokeColor=#B85450;strokeWidth=2;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="590" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="&lt;b&gt;MES DB&lt;/b&gt;&lt;br&gt;[PostgreSQL]" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=11;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="820" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="otel" value="&lt;b&gt;OpenTelemetry Collector&lt;/b&gt;&lt;br&gt;[новый компонент]&lt;br&gt;приём · батчинг · экспорт" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=2;fontColor=#000000;fontSize=11;align=center;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="320" width="240" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="jaeger" value="&lt;b&gt;Jaeger&lt;/b&gt;&lt;br&gt;[новый компонент]&lt;br&gt;хранение трейсов · поиск · UI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=2;fontColor=#000000;fontSize=11;align=center;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="680" width="240" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-new" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="920" width="30" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-new-t" value="новый компонент / новая связь" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="80" y="916" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-covered" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#B85450;strokeWidth=2;dashed=1;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="955" width="30" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-covered-t" value="система, покрываемая трейсингом" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="80" y="951" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="note-sdk" value="OpenTelemetry SDK внедряется в Shop API, CRM API, MES API и веб-клиенты.&lt;br&gt;Контекст трейса передаётся по HTTP (traceparent) и в заголовках сообщений RabbitMQ." style="text;html=1;fontSize=11;align=left;verticalAlign=top;fontColor=#333333;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="600" y="940" width="700" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" value="заказ, 3D-модель" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;" edge="1" parent="1" source="p1" target="w1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="REST" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;" edge="1" parent="1" source="w1" target="a1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="чтение/запись" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;" edge="1" parent="1" source="a1" target="d1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="940" y="130" />
+              <mxPoint x="940" y="135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" value="загрузка файлов" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;" edge="1" parent="1" source="a1" target="s3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="160" />
+              <mxPoint x="920" y="330" />
+              <mxPoint x="1140" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="REST" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;" edge="1" parent="1" source="p2" target="w2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="REST" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;" edge="1" parent="1" source="w2" target="a2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="чтение/запись" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;" edge="1" parent="1" source="a2" target="d1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="940" y="360" />
+              <mxPoint x="940" y="500" />
+              <mxPoint x="1360" y="500" />
+              <mxPoint x="1360" y="135" />
+              <mxPoint x="1220" y="135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" value="чтение моделей" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;" edge="1" parent="1" source="a2" target="s3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="380" />
+              <mxPoint x="960" y="470" />
+              <mxPoint x="1140" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" value="прямые вызовы API" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;" edge="1" parent="1" source="p3" target="a3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="565" />
+              <mxPoint x="300" y="720" />
+              <mxPoint x="640" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" value="REST" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;" edge="1" parent="1" source="p4" target="w3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="REST" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;" edge="1" parent="1" source="w3" target="a3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="чтение/запись" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;" edge="1" parent="1" source="a3" target="d3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="чтение моделей" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;" edge="1" parent="1" source="a3" target="s3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="780" />
+              <mxPoint x="960" y="730" />
+              <mxPoint x="1340" y="730" />
+              <mxPoint x="1340" y="405" />
+              <mxPoint x="1220" y="405" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" value="события заказов" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=classic;endFill=1;fontSize=9;strokeColor=#B85450;strokeWidth=2;dashed=1;" edge="1" parent="1" source="a2" target="mq">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="400" />
+              <mxPoint x="840" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" value="события статусов" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=classic;endFill=1;fontSize=9;strokeColor=#B85450;strokeWidth=2;dashed=1;" edge="1" parent="1" source="a3" target="mq">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="720" y="745" />
+              <mxPoint x="720" y="700" />
+              <mxPoint x="1060" y="700" />
+              <mxPoint x="1060" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="n1" value="OTLP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;strokeColor=#B85450;strokeWidth=2;dashed=1;" edge="1" parent="1" source="a1" target="otel">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="940" y="130" />
+              <mxPoint x="940" y="240" />
+              <mxPoint x="1320" y="240" />
+              <mxPoint x="1320" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n2" value="OTLP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;strokeColor=#B85450;strokeWidth=2;dashed=1;" edge="1" parent="1" source="a2" target="otel">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="340" />
+              <mxPoint x="1300" y="340" />
+              <mxPoint x="1300" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n3" value="OTLP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;strokeColor=#B85450;strokeWidth=2;dashed=1;" edge="1" parent="1" source="a3" target="otel">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="760" />
+              <mxPoint x="1380" y="760" />
+              <mxPoint x="1380" y="430" />
+              <mxPoint x="1450" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n4" value="трейсы" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;strokeColor=#B85450;strokeWidth=2;dashed=1;" edge="1" parent="1" source="otel" target="jaeger">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1520" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+
+        <mxCell id="prom" value="&lt;b&gt;Prometheus&lt;/b&gt;&lt;br&gt;[новый компонент]&lt;br&gt;span metrics · TSDB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;fontColor=#000000;fontSize=11;align=center;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="260" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="alert" value="&lt;b&gt;Alertmanager&lt;/b&gt;&lt;br&gt;[новый компонент]&lt;br&gt;маршрутизация алертов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;fontColor=#000000;fontSize=11;align=center;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="480" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="grafana" value="&lt;b&gt;Grafana&lt;/b&gt;&lt;br&gt;[новый компонент]&lt;br&gt;дашборды · SLO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;fontColor=#000000;fontSize=11;align=center;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="700" width="200" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-green" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="600" y="865" width="30" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-green-t" value="новый компонент мониторинга и алертинга" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="640" y="861" width="340" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="note-alert" value="Span metrics из трейсов → Prometheus → Alertmanager.&lt;br&gt;Алерты: зависшие заказы, нарушение SLA, рост ошибок, заторы в очереди." style="text;html=1;fontSize=11;align=left;verticalAlign=top;fontColor=#333333;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="600" y="895" width="390" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="note-prom" value="Автоматический мониторинг прохождения заказа:&lt;br&gt;span metrics из трейсов, SLO и алерты по зависшим заказам." style="text;html=1;fontSize=11;align=left;verticalAlign=top;fontColor=#333333;whiteSpace=wrap;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1690" y="870" width="320" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="g1" value="span metrics" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;strokeColor=#82B366;strokeWidth=2;" edge="1" parent="1" source="otel" target="prom">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1680" y="350" />
+              <mxPoint x="1680" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g2" value="алерты" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;strokeColor=#82B366;strokeWidth=2;" edge="1" parent="1" source="prom" target="alert">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g3" value="дашборды" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;strokeColor=#82B366;strokeWidth=2;" edge="1" parent="1" source="prom" target="grafana">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1960" y="310" />
+              <mxPoint x="1960" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g4" value="трейсы" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;strokeColor=#82B366;strokeWidth=2;" edge="1" parent="1" source="jaeger" target="grafana">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1680" y="735" />
+              <mxPoint x="1680" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
