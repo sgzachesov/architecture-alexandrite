@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0" version="24.9.1">
   <diagram name="C4 — трейсинг и алертинг" id="c4-tracing-alerting">
-    <mxGraphModel dx="2020" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2020" pageHeight="1050" math="0" shadow="0">
+    <mxGraphModel dx="2020" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1050" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -209,7 +209,7 @@
         </mxCell>
 
 
-        <mxCell id="prom" value="&lt;b&gt;Prometheus&lt;/b&gt;&lt;br&gt;[новый компонент]&lt;br&gt;span metrics · TSDB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;fontColor=#000000;fontSize=11;align=center;arcSize=10;" vertex="1" parent="1">
+        <mxCell id="prom" value="&lt;b&gt;Prometheus&lt;/b&gt;&lt;br&gt;[новый компонент]&lt;br&gt;span metrics · order SLA · TSDB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;fontColor=#000000;fontSize=11;align=center;arcSize=10;" vertex="1" parent="1">
           <mxGeometry x="1720" y="260" width="200" height="100" as="geometry" />
         </mxCell>
         <mxCell id="alert" value="&lt;b&gt;Alertmanager&lt;/b&gt;&lt;br&gt;[новый компонент]&lt;br&gt;маршрутизация алертов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;fontColor=#000000;fontSize=11;align=center;arcSize=10;" vertex="1" parent="1">
@@ -218,6 +218,9 @@
         <mxCell id="grafana" value="&lt;b&gt;Grafana&lt;/b&gt;&lt;br&gt;[новый компонент]&lt;br&gt;дашборды · SLO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;fontColor=#000000;fontSize=11;align=center;arcSize=10;" vertex="1" parent="1">
           <mxGeometry x="1720" y="700" width="200" height="100" as="geometry" />
         </mxCell>
+        <mxCell id="tracker" value="&lt;b&gt;Order SLA Tracker&lt;/b&gt;&lt;br&gt;[новый компонент]&lt;br&gt;ожидаемые переходы · дедлайны" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;fontColor=#000000;fontSize=11;align=center;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1940" y="390" width="200" height="100" as="geometry" />
+        </mxCell>
 
         <mxCell id="legend-green" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="600" y="865" width="30" height="18" as="geometry" />
@@ -225,10 +228,10 @@
         <mxCell id="legend-green-t" value="новый компонент мониторинга и алертинга" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;fontColor=#333333;" vertex="1" parent="1">
           <mxGeometry x="640" y="861" width="340" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="note-alert" value="Span metrics из трейсов → Prometheus → Alertmanager.&lt;br&gt;Алерты: зависшие заказы, нарушение SLA, рост ошибок, заторы в очереди." style="text;html=1;fontSize=11;align=left;verticalAlign=top;fontColor=#333333;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="note-alert" value="Span metrics → Prometheus → Alertmanager — технические алерты: ошибки, задержки, дубли.&lt;br&gt;Алерты о зависших заказах и разрыве конвейера — из метрик Order SLA Tracker." style="text;html=1;fontSize=11;align=left;verticalAlign=top;fontColor=#333333;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="600" y="895" width="390" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="note-prom" value="Автоматический мониторинг прохождения заказа:&lt;br&gt;span metrics из трейсов, SLO и алерты по зависшим заказам." style="text;html=1;fontSize=11;align=left;verticalAlign=top;fontColor=#333333;whiteSpace=wrap;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=1;" vertex="1" parent="1">
+        <mxCell id="note-prom" value="Order SLA Tracker раз в минуту сверяет статусы и дедлайны заказов в Shop DB;&lt;br&gt;события RabbitMQ обновляют их в реальном времени. Просрочки уходят в Prometheus." style="text;html=1;fontSize=11;align=left;verticalAlign=top;fontColor=#333333;whiteSpace=wrap;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=1;" vertex="1" parent="1">
           <mxGeometry x="1690" y="870" width="320" height="70" as="geometry" />
         </mxCell>
 
@@ -246,8 +249,8 @@
         <mxCell id="g3" value="дашборды" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;strokeColor=#82B366;strokeWidth=2;" edge="1" parent="1" source="prom" target="grafana">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1960" y="310" />
-              <mxPoint x="1960" y="750" />
+              <mxPoint x="1700" y="330" />
+              <mxPoint x="1700" y="730" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -256,6 +259,23 @@
             <Array as="points">
               <mxPoint x="1680" y="735" />
               <mxPoint x="1680" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="t1" value="статусы заказов · сверка" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;strokeColor=#82B366;strokeWidth=2;dashed=1;" edge="1" parent="1" source="d1" target="tracker">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1110" y="40" />
+              <mxPoint x="2040" y="40" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t2" value="метрики просрочек" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;fontSize=9;strokeColor=#82B366;strokeWidth=2;" edge="1" parent="1" source="tracker" target="prom">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1960" y="375" />
+              <mxPoint x="1900" y="375" />
             </Array>
           </mxGeometry>
         </mxCell>
